@@ -22,6 +22,8 @@ struct Person {
         self.nickname = "pessoa\(mockParameter)"
         self.cpf = 10000000000 + mockParameter
         self.phoneNumber = 11000000000 + mockParameter
-        self.birthDate = Date()
+
+        let time = Double(24 * 3600 * mockParameter)
+        self.birthDate = Date().addingTimeInterval(time)
     }
 }

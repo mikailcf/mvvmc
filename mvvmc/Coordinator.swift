@@ -16,7 +16,7 @@ class Coordinator {
 
     static let shared = Coordinator()
 
-    private var navigationController: UINavigationController? = nil
+    fileprivate var navigationController: UINavigationController? = nil
 
     func setNavigationController(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -32,6 +32,11 @@ class Coordinator {
 extension Coordinator: MainCoordinator {
 
     func showPeopleList() {
+        guard
+            let navigationController = navigationController,
+            let peopleListviewController = PeopleListViewController.fromStoryboard(coordinator: self, peopleList: DataManager.getLocalPersonsList())
+        else { return }
 
+        navigationController.pushViewController(peopleListviewController, animated: true)
     }
 }

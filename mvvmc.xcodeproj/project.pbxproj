@@ -14,6 +14,8 @@
 		25DDCBFE1E1ACD93008FB860 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DDCBFD1E1ACD93008FB860 /* PeopleListViewController.xib */; };
 		25DDCC001E1ACDA3008FB860 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DDCBFF1E1ACDA3008FB860 /* PeopleListViewController.swift */; };
 		25DDCC021E1AD4C9008FB860 /* PeopleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DDCC011E1AD4C9008FB860 /* PeopleList.storyboard */; };
+		25DDCC0A1E1AE2EC008FB860 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DDCC081E1AE2EC008FB860 /* PersonTableViewCell.swift */; };
+		25DDCC0B1E1AE2EC008FB860 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DDCC091E1AE2EC008FB860 /* PersonTableViewCell.xib */; };
 		B36AF9FB1E01EA8300DE952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */; };
 		B36AF9FD1E01EA8300DE952F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FC1E01EA8300DE952F /* FirstViewController.swift */; };
 		B36AFA001E01EA8400DE952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36AF9FE1E01EA8400DE952F /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		25DDCBFD1E1ACD93008FB860 /* PeopleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
 		25DDCBFF1E1ACDA3008FB860 /* PeopleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		25DDCC011E1AD4C9008FB860 /* PeopleList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PeopleList.storyboard; sourceTree = "<group>"; };
+		25DDCC081E1AE2EC008FB860 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonTableViewCell.swift; path = ../PersonTableViewCell.swift; sourceTree = "<group>"; };
+		25DDCC091E1AE2EC008FB860 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PersonTableViewCell.xib; path = ../PersonTableViewCell.xib; sourceTree = "<group>"; };
 		B36AF9F71E01EA8300DE952F /* mvvmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B36AF9FC1E01EA8300DE952F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				25DDCBFF1E1ACDA3008FB860 /* PeopleListViewController.swift */,
 				25DDCC011E1AD4C9008FB860 /* PeopleList.storyboard */,
 				25DDCBFD1E1ACD93008FB860 /* PeopleListViewController.xib */,
+				25DDCC081E1AE2EC008FB860 /* PersonTableViewCell.swift */,
+				25DDCC091E1AE2EC008FB860 /* PersonTableViewCell.xib */,
 			);
 			name = "People List View Controller";
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 				B36AFA051E01EA8400DE952F /* LaunchScreen.storyboard in Resources */,
 				25DDCBFE1E1ACD93008FB860 /* PeopleListViewController.xib in Resources */,
 				B36AFA021E01EA8400DE952F /* Assets.xcassets in Resources */,
+				25DDCC0B1E1AE2EC008FB860 /* PersonTableViewCell.xib in Resources */,
 				25DDCC021E1AD4C9008FB860 /* PeopleList.storyboard in Resources */,
 				B36AFA001E01EA8400DE952F /* Main.storyboard in Resources */,
 				25DDCBFC1E1ACD62008FB860 /* FirstViewController.xib in Resources */,
@@ -321,6 +328,7 @@
 				250F08D21E1AABAA0011E432 /* DataManager.swift in Sources */,
 				25DDCBFA1E1AC65B008FB860 /* Coordinator.swift in Sources */,
 				250F08D41E1AABBE0011E432 /* Person.swift in Sources */,
+				25DDCC0A1E1AE2EC008FB860 /* PersonTableViewCell.swift in Sources */,
 				B36AF9FB1E01EA8300DE952F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
