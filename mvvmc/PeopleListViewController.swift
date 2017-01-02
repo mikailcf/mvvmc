@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PeopleListViewController: UIViewController {
+class PeopleListViewController: UIViewController, UITableViewDataSource, PeopleListFeedback {
 
     private static let storyboardName = "PeopleList"
     private static let viewControllerName = "PeopleListViewController"
@@ -17,6 +17,7 @@ class PeopleListViewController: UIViewController {
     fileprivate var datasource: PeopleListDataSource? = nil
 
     @IBOutlet fileprivate var peopleTableView: UITableView!
+    @IBOutlet fileprivate var filteredLabel: UILabel!
 
     // usando Xib
 
@@ -51,11 +52,26 @@ class PeopleListViewController: UIViewController {
 
         delegate?.loadPeopleList(feedback: self)
 
+        filteredLabel.text = "Not filtered"
+
         super.viewDidLoad()
     }
-}
 
-extension PeopleListViewController: UITableViewDataSource {
+    // MARK: Actions
+
+    @IBAction func filter() {
+        delegate?.setFilterAs(filterActive: true, feedback: self)
+    }
+
+    @IBAction func removeFilter() {
+        delegate?.setFilterAs(filterActive: false, feedback: self)
+    }
+
+    @IBAction func addPerson() {
+
+    }
+
+    // MARK: UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource?.peopleList?.count ?? 10
@@ -76,11 +92,15 @@ extension PeopleListViewController: UITableViewDataSource {
 
         return cell
     }
-}
 
-extension PeopleListViewController: PeopleListFeedback {
+    // MARK: PeopleListFeedback
 
     func didLoadPeopleList(error: DataError?) {
         peopleTableView.reloadData()
+    }
+
+    func didChangeFilter(isFilterActive: Bool) {
+        peopleTableView.reloadData()
+        filteredLabel.text = isFilterActive ? "Filtered" : "Not filtered"
     }
 }

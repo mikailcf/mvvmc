@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yWc-4h-RxB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Details 2-->
+        <scene sceneID="yQt-pN-ZLG">
+            <objects>
+                <viewController storyboardIdentifier="Person2ViewController" title="Details 2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yWc-4h-RxB" customClass="Person2ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Slr-ZP-Vg8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gqv-KF-clE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KRR-vn-dav">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-vR-hoa">
+                                <rect key="frame" x="166" y="141" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSD-Tq-AaM">
+                                <rect key="frame" x="124.5" y="474" width="126" height="30"/>
+                                <state key="normal" title="Change Nickname"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cdg-vR-hoa" firstAttribute="centerX" secondItem="KRR-vn-dav" secondAttribute="centerX" id="5Hl-c0-W20"/>
+                            <constraint firstItem="vSD-Tq-AaM" firstAttribute="centerX" secondItem="KRR-vn-dav" secondAttribute="centerX" id="RJe-OA-AWl"/>
+                            <constraint firstItem="Gqv-KF-clE" firstAttribute="top" secondItem="vSD-Tq-AaM" secondAttribute="bottom" constant="99" id="cg7-Jx-hNK"/>
+                            <constraint firstItem="Cdg-vR-hoa" firstAttribute="top" secondItem="Slr-ZP-Vg8" secondAttribute="bottom" constant="141" id="oD7-ti-1kK"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="nicknameLabel" destination="Cdg-vR-hoa" id="KWZ-z6-7KA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wu2-sP-Icp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15" y="17"/>
+        </scene>
+    </scenes>
+</document>

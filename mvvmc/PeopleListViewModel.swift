@@ -16,16 +16,20 @@ protocol PeopleListDataSource {
 protocol PeopleListDelegate {
 
     func loadPeopleList(feedback: PeopleListFeedback)
+    func setFilterAs(filterActive: Bool, feedback: PeopleListFeedback)
 }
 
 protocol PeopleListFeedback {
 
     func didLoadPeopleList(error: DataError?)
+    func didChangeFilter(isFilterActive: Bool)
 }
 
-class PeopleListViewModel: PeopleListDataSource {
+class PeopleListViewModel: PeopleListDataSource, PeopleListDelegate {
 
     fileprivate let coordinator: MainCoordinator
+
+    var originalPeopleList: [Person]? = nil
 
     // extensions can't have stored properties, so this breaks the `extension for protocol` pattern
     var peopleList: [Person]? = nil
@@ -33,20 +37,22 @@ class PeopleListViewModel: PeopleListDataSource {
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
     }
-}
 
-extension PeopleListViewModel: PeopleListDelegate {
+    // MARK: PeopleListDelegate
 
     func loadPeopleList(feedback: PeopleListFeedback) {
         DataManager.getPeopleList { (peopleList: [Person]?, error: DataError?) in
-            // async for illustration's sake
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
-                if let peopleList = peopleList {
-                    self.peopleList = peopleList
-                }
+            if let peopleList = peopleList {
+                self.originalPeopleList = peopleList
+                self.peopleList = peopleList
+            }
 
-                feedback.didLoadPeopleList(error: error)
-            })
+            feedback.didLoadPeopleList(error: error)
         }
+    }
+
+    func setFilterAs(filterActive: Bool, feedback: PeopleListFeedback) {
+        self.peopleList = filterActive ? Array(peopleList?.prefix(2) ?? []) : originalPeopleList
+        feedback.didChangeFilter(isFilterActive: filterActive)
     }
 }

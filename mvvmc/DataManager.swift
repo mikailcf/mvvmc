@@ -25,15 +25,33 @@ class DataManager {
         return mockPeopleList()
     }
 
-    static func getPeopleList(callback: ((_ personsList: [Person]?, _ error: DataError?) -> Void)) {
+    static func getPeopleList(callback: ((_ peopleList: [Person]?, _ error: DataError?) -> Void)) {
         let error: DataError? = nil
 
         // the server request should be made here, wrapping any server error in the error: DataError above
 
-        if let error = error {
-            callback(getLocalPeopleList(), error)
-        } else {
-            callback(mockPeopleList(), nil)
-        }
+        // delay for illustration's sake
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+            if let error = error {
+                callback(getLocalPeopleList(), error)
+            } else {
+                callback(mockPeopleList(), nil)
+            }
+        })
+    }
+
+    static func getPerson(index: Int, callback: ((_ person: Person?, _ error: DataError?) -> Void)) {
+        let error: DataError? = nil
+
+        // the server request should be made here, wrapping any server error in the error: DataError above
+
+        // delay for illustration's sake
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+            if let error = error {
+                callback(getLocalPeopleList()[index], error)
+            } else {
+                callback(mockPeopleList()[index], nil)
+            }
+        })
     }
 }

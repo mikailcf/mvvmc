@@ -17,25 +17,71 @@
                         <viewControllerLayoutGuide type="top" id="2qM-eS-eUZ"/>
                         <viewControllerLayoutGuide type="bottom" id="OoC-iF-spa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="1RE-zg-IyJ">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" contentMode="scaleToFill" id="1RE-zg-IyJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsF-AR-KEk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8au-N9-fao">
+                                        <rect key="frame" x="273" y="7" width="94" height="30"/>
+                                        <state key="normal" title="Remove Filter"/>
+                                        <connections>
+                                            <action selector="removeFilter" destination="379-Ka-K3g" eventType="touchUpInside" id="mgx-e9-4iO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBJ-b4-bd7">
+                                        <rect key="frame" x="8" y="7" width="35" height="30"/>
+                                        <state key="normal" title="Filter"/>
+                                        <connections>
+                                            <action selector="filter" destination="379-Ka-K3g" eventType="touchUpInside" id="srT-V6-vgM"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nv-Bc-dEq">
+                                        <rect key="frame" x="159" y="11" width="57.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="eBJ-b4-bd7" firstAttribute="leading" secondItem="wsF-AR-KEk" secondAttribute="leading" constant="8" id="33j-SC-nqB"/>
+                                    <constraint firstItem="7Nv-Bc-dEq" firstAttribute="centerY" secondItem="wsF-AR-KEk" secondAttribute="centerY" id="ACd-ur-iCz"/>
+                                    <constraint firstItem="7Nv-Bc-dEq" firstAttribute="centerX" secondItem="wsF-AR-KEk" secondAttribute="centerX" id="E5L-FZ-gTJ"/>
+                                    <constraint firstItem="eBJ-b4-bd7" firstAttribute="centerY" secondItem="wsF-AR-KEk" secondAttribute="centerY" id="GOx-Rh-27r"/>
+                                    <constraint firstAttribute="height" constant="44" id="Irl-t8-elZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="8au-N9-fao" secondAttribute="trailing" constant="8" id="i0b-Pu-m5X"/>
+                                    <constraint firstItem="8au-N9-fao" firstAttribute="centerY" secondItem="wsF-AR-KEk" secondAttribute="centerY" id="jhN-Bu-GCu"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-wt-t5L">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Kg0-wt-t5L" firstAttribute="top" secondItem="2qM-eS-eUZ" secondAttribute="bottom" id="2Bk-RU-yuL"/>
+                            <constraint firstItem="wsF-AR-KEk" firstAttribute="leading" secondItem="1RE-zg-IyJ" secondAttribute="leading" id="FJ0-py-BuD"/>
                             <constraint firstItem="Kg0-wt-t5L" firstAttribute="leading" secondItem="1RE-zg-IyJ" secondAttribute="leading" id="RDW-FL-reO"/>
                             <constraint firstAttribute="trailing" secondItem="Kg0-wt-t5L" secondAttribute="trailing" id="YcM-BO-spo"/>
+                            <constraint firstAttribute="trailing" secondItem="wsF-AR-KEk" secondAttribute="trailing" id="gtg-Ik-7px"/>
                             <constraint firstItem="OoC-iF-spa" firstAttribute="top" secondItem="Kg0-wt-t5L" secondAttribute="bottom" id="rL0-io-cp5"/>
+                            <constraint firstItem="Kg0-wt-t5L" firstAttribute="top" secondItem="wsF-AR-KEk" secondAttribute="bottom" id="udh-Si-wWn"/>
+                            <constraint firstItem="wsF-AR-KEk" firstAttribute="top" secondItem="2qM-eS-eUZ" secondAttribute="bottom" id="zxT-0l-wa8"/>
                         </constraints>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationItem key="navigationItem" title="People List" id="ONT-Qi-Cjl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4lk-zC-1lx">
+                            <connections>
+                                <action selector="addPerson" destination="379-Ka-K3g" id="A0b-hz-Aua"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="filteredLabel" destination="7Nv-Bc-dEq" id="NVa-SY-Dmb"/>
                         <outlet property="peopleTableView" destination="Kg0-wt-t5L" id="s7h-Vc-Pp2"/>
                     </connections>
                 </viewController>

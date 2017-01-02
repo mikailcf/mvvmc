@@ -11,9 +11,10 @@ import UIKit
 protocol MainCoordinator {
     
     func showPeopleList()
+    func showNextDetails(personModelView: PersonViewModel)
 }
 
-class Coordinator {
+class Coordinator: MainCoordinator {
 
     static let shared = Coordinator()
 
@@ -28,9 +29,8 @@ class Coordinator {
 
         navigationController.viewControllers = [FirstViewController(delegate: FirstViewModel(coordinator: self))]
     }
-}
 
-extension Coordinator: MainCoordinator {
+    // MARK: MainCoordinator
 
     func showPeopleList() {
         let peopleListViewModel = PeopleListViewModel(coordinator: self)
@@ -41,5 +41,9 @@ extension Coordinator: MainCoordinator {
         else { return }
 
         navigationController.pushViewController(peopleListviewController, animated: true)
+    }
+
+    func showNextDetails(personModelView: PersonViewModel) {
+
     }
 }
