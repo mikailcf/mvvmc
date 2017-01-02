@@ -12,7 +12,7 @@
         <!--Details 2-->
         <scene sceneID="yQt-pN-ZLG">
             <objects>
-                <viewController storyboardIdentifier="Person2ViewController" title="Details 2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yWc-4h-RxB" customClass="Person2ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Person2ViewController" title="Details 2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yWc-4h-RxB" customClass="Person2ViewController" customModule="mvvmc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Slr-ZP-Vg8"/>
                         <viewControllerLayoutGuide type="bottom" id="Gqv-KF-clE"/>
@@ -30,6 +30,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSD-Tq-AaM">
                                 <rect key="frame" x="124.5" y="474" width="126" height="30"/>
                                 <state key="normal" title="Change Nickname"/>
+                                <connections>
+                                    <action selector="changeNickname" destination="yWc-4h-RxB" eventType="touchUpInside" id="xVb-My-0Cm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

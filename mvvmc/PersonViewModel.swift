@@ -13,9 +13,10 @@ protocol PersonDelegate {
     func loadPerson(index: Int, feedback: Person1Feedback)
     func changeFirstName(feedback: Person1Feedback)
     func changeNickname(feedback: Person2Feedback)
+    func showNextDetails()
 }
 
-protocol PersonDatasource {
+protocol PersonDataSource {
 
     var fullName: String { get }
     var nickname: String { get }
@@ -25,6 +26,7 @@ protocol PersonDatasource {
 protocol Person1Feedback {
 
     func didChangeFirstName()
+    func didLoadPerson(error: DataError?)
 }
 
 protocol Person2Feedback {
@@ -32,7 +34,7 @@ protocol Person2Feedback {
     func didChangeNickname()
 }
 
-class PersonViewModel: PersonDelegate, PersonDatasource {
+class PersonViewModel: PersonDelegate, PersonDataSource {
 
     private let coordinator: MainCoordinator
     private var person: Person? = nil
@@ -44,7 +46,24 @@ class PersonViewModel: PersonDelegate, PersonDatasource {
     // MARK: PersonDelegate
 
     func loadPerson(index: Int, feedback: Person1Feedback) {
-        DataManager.
+        DataManager.getPerson(index: index) { (person: Person?, error: DataError?) in
+            self.person = person
+            feedback.didLoadPerson(error: error)
+        }
+    }
+
+    func changeFirstName(feedback: Person1Feedback) {
+        person?.firstName = "Changed"
+        feedback.didChangeFirstName()
+    }
+
+    func changeNickname(feedback: Person2Feedback) {
+        person?.nickname = "Changed"
+        feedback.didChangeNickname()
+    }
+
+    func showNextDetails() {
+        coordinator.showNextDetails(delegate: self, datasource: self)
     }
 
     // MARK: PersonDatasource
@@ -53,19 +72,19 @@ class PersonViewModel: PersonDelegate, PersonDatasource {
         if let person = person {
             return "\(person.firstName) \(person.lastName)"
         } else {
-            return "             "
+            return ""
         }
     }
 
     var nickname: String {
-        return person?.nickname ?? "       "
+        return person?.nickname ?? ""
     }
 
     var cpf: String {
         if let person = person {
             return "\(person.cpf)"
         } else {
-            return "           "
+            return ""
         }
     }
 }

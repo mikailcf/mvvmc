@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PeopleListViewController: UIViewController, UITableViewDataSource, PeopleListFeedback {
+class PeopleListViewController: UIViewController, UITableViewDataSource, PeopleListFeedback, UITableViewDelegate {
 
     private static let storyboardName = "PeopleList"
     private static let viewControllerName = "PeopleListViewController"
@@ -48,6 +48,7 @@ class PeopleListViewController: UIViewController, UITableViewDataSource, PeopleL
     override func viewDidLoad() {
         peopleTableView.register(PersonTableViewCell.nib(), forCellReuseIdentifier: PersonTableViewCell.cellID)
         peopleTableView.dataSource = self
+        peopleTableView.delegate = self
         peopleTableView.estimatedRowHeight = PersonTableViewCell.minHeight()
 
         delegate?.loadPeopleList(feedback: self)
@@ -93,10 +94,20 @@ class PeopleListViewController: UIViewController, UITableViewDataSource, PeopleL
         return cell
     }
 
+    // MARK: UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.showPersonAtIndex(index: indexPath.row)
+    }
+
     // MARK: PeopleListFeedback
 
     func didLoadPeopleList(error: DataError?) {
-        peopleTableView.reloadData()
+        if let error = error {
+            // deal with error
+        } else {
+            peopleTableView.reloadData()
+        }
     }
 
     func didChangeFilter(isFilterActive: Bool) {

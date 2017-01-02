@@ -17,6 +17,7 @@ protocol PeopleListDelegate {
 
     func loadPeopleList(feedback: PeopleListFeedback)
     func setFilterAs(filterActive: Bool, feedback: PeopleListFeedback)
+    func showPersonAtIndex(index: Int)
 }
 
 protocol PeopleListFeedback {
@@ -31,12 +32,13 @@ class PeopleListViewModel: PeopleListDataSource, PeopleListDelegate {
 
     var originalPeopleList: [Person]? = nil
 
-    // extensions can't have stored properties, so this breaks the `extension for protocol` pattern
-    var peopleList: [Person]? = nil
-
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
     }
+
+    // MARK: PeopleListDataSource
+
+    var peopleList: [Person]? = nil
 
     // MARK: PeopleListDelegate
 
@@ -54,5 +56,9 @@ class PeopleListViewModel: PeopleListDataSource, PeopleListDelegate {
     func setFilterAs(filterActive: Bool, feedback: PeopleListFeedback) {
         self.peopleList = filterActive ? Array(peopleList?.prefix(2) ?? []) : originalPeopleList
         feedback.didChangeFilter(isFilterActive: filterActive)
+    }
+
+    func showPersonAtIndex(index: Int) {
+        coordinator.showFirstDetails(index: index)
     }
 }

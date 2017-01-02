@@ -11,7 +11,8 @@ import UIKit
 protocol MainCoordinator {
     
     func showPeopleList()
-    func showNextDetails(personModelView: PersonViewModel)
+    func showFirstDetails(index: Int)
+    func showNextDetails(delegate: PersonDelegate, datasource: PersonDataSource)
 }
 
 class Coordinator: MainCoordinator {
@@ -43,7 +44,23 @@ class Coordinator: MainCoordinator {
         navigationController.pushViewController(peopleListviewController, animated: true)
     }
 
-    func showNextDetails(personModelView: PersonViewModel) {
+    func showFirstDetails(index: Int) {
+        let viewModel = PersonViewModel(coordinator: self)
 
+        guard
+            let navigationController = navigationController,
+            let viewController = Person1ViewController.fromStoryboard(indexToLoad: index, delegate: viewModel, datasource: viewModel)
+            else { return }
+
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
+    func showNextDetails(delegate: PersonDelegate, datasource: PersonDataSource) {
+        guard
+            let navigationController = navigationController,
+            let viewController = Person2ViewController.fromStoryboard(delegate: delegate, datasource: datasource)
+        else { return }
+
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

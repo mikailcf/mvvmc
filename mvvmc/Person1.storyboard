@@ -43,6 +43,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ms-Y9-GcN">
                                 <rect key="frame" x="122" y="406" width="131" height="30"/>
                                 <state key="normal" title="Change First Name"/>
+                                <connections>
+                                    <action selector="changeFirstName" destination="f5U-z7-eAJ" eventType="touchUpInside" id="K9p-os-RjP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

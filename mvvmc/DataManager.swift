@@ -25,7 +25,7 @@ class DataManager {
         return mockPeopleList()
     }
 
-    static func getPeopleList(callback: ((_ peopleList: [Person]?, _ error: DataError?) -> Void)) {
+    static func getPeopleList(callback: @escaping ((_ peopleList: [Person]?, _ error: DataError?) -> Void)) {
         let error: DataError? = nil
 
         // the server request should be made here, wrapping any server error in the error: DataError above
@@ -40,7 +40,7 @@ class DataManager {
         })
     }
 
-    static func getPerson(index: Int, callback: ((_ person: Person?, _ error: DataError?) -> Void)) {
+    static func getPerson(index: Int, callback: @escaping ((_ person: Person?, _ error: DataError?) -> Void)) {
         let error: DataError? = nil
 
         // the server request should be made here, wrapping any server error in the error: DataError above
