@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250F08D21E1AABAA0011E432 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F08D11E1AABAA0011E432 /* DataManager.swift */; };
+		250F08D41E1AABBE0011E432 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F08D31E1AABBE0011E432 /* Person.swift */; };
 		B36AF9FB1E01EA8300DE952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */; };
 		B36AF9FD1E01EA8300DE952F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FC1E01EA8300DE952F /* ViewController.swift */; };
 		B36AFA001E01EA8400DE952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36AF9FE1E01EA8400DE952F /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		250F08D11E1AABAA0011E432 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		250F08D31E1AABBE0011E432 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B36AF9F71E01EA8300DE952F /* mvvmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B36AF9FC1E01EA8300DE952F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250F08D01E1AAA080011E432 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				250F08D11E1AABAA0011E432 /* DataManager.swift */,
+				250F08D31E1AABBE0011E432 /* Person.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		B36AF9EE1E01EA8300DE952F = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		B36AF9F91E01EA8300DE952F /* mvvmc */ = {
 			isa = PBXGroup;
 			children = (
+				250F08D01E1AAA080011E432 /* Data */,
 				B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */,
 				B36AF9FC1E01EA8300DE952F /* ViewController.swift */,
 				B36AF9FE1E01EA8400DE952F /* Main.storyboard */,
@@ -260,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36AF9FD1E01EA8300DE952F /* ViewController.swift in Sources */,
+				250F08D21E1AABAA0011E432 /* DataManager.swift in Sources */,
+				250F08D41E1AABBE0011E432 /* Person.swift in Sources */,
 				B36AF9FB1E01EA8300DE952F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +521,7 @@
 				B36AFA211E01EA8400DE952F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B36AFA221E01EA8400DE952F /* Build configuration list for PBXNativeTarget "mvvmcTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +530,7 @@
 				B36AFA241E01EA8400DE952F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B36AFA251E01EA8400DE952F /* Build configuration list for PBXNativeTarget "mvvmcUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +539,7 @@
 				B36AFA271E01EA8400DE952F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
