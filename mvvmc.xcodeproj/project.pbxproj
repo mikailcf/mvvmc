@@ -9,8 +9,13 @@
 /* Begin PBXBuildFile section */
 		250F08D21E1AABAA0011E432 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F08D11E1AABAA0011E432 /* DataManager.swift */; };
 		250F08D41E1AABBE0011E432 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F08D31E1AABBE0011E432 /* Person.swift */; };
+		25DDCBFA1E1AC65B008FB860 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DDCBF91E1AC65B008FB860 /* Coordinator.swift */; };
+		25DDCBFC1E1ACD62008FB860 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DDCBFB1E1ACD62008FB860 /* FirstViewController.xib */; };
+		25DDCBFE1E1ACD93008FB860 /* PeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DDCBFD1E1ACD93008FB860 /* PeopleListViewController.xib */; };
+		25DDCC001E1ACDA3008FB860 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DDCBFF1E1ACDA3008FB860 /* PeopleListViewController.swift */; };
+		25DDCC021E1AD4C9008FB860 /* PeopleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DDCC011E1AD4C9008FB860 /* PeopleList.storyboard */; };
 		B36AF9FB1E01EA8300DE952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */; };
-		B36AF9FD1E01EA8300DE952F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FC1E01EA8300DE952F /* ViewController.swift */; };
+		B36AF9FD1E01EA8300DE952F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FC1E01EA8300DE952F /* FirstViewController.swift */; };
 		B36AFA001E01EA8400DE952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36AF9FE1E01EA8400DE952F /* Main.storyboard */; };
 		B36AFA021E01EA8400DE952F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B36AFA011E01EA8400DE952F /* Assets.xcassets */; };
 		B36AFA051E01EA8400DE952F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36AFA031E01EA8400DE952F /* LaunchScreen.storyboard */; };
@@ -38,9 +43,14 @@
 /* Begin PBXFileReference section */
 		250F08D11E1AABAA0011E432 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		250F08D31E1AABBE0011E432 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		25DDCBF91E1AC65B008FB860 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		25DDCBFB1E1ACD62008FB860 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		25DDCBFD1E1ACD93008FB860 /* PeopleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleListViewController.xib; sourceTree = "<group>"; };
+		25DDCBFF1E1ACDA3008FB860 /* PeopleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
+		25DDCC011E1AD4C9008FB860 /* PeopleList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PeopleList.storyboard; sourceTree = "<group>"; };
 		B36AF9F71E01EA8300DE952F /* mvvmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B36AF9FC1E01EA8300DE952F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B36AF9FC1E01EA8300DE952F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		B36AF9FF1E01EA8400DE952F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B36AFA011E01EA8400DE952F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B36AFA041E01EA8400DE952F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +97,35 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
+		25DDCBF81E1AC5A4008FB860 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				25DDCC051E1AD57D008FB860 /* People List View Controller */,
+				25DDCBF91E1AC65B008FB860 /* Coordinator.swift */,
+				25DDCC031E1AD562008FB860 /* First View Controller */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		25DDCC031E1AD562008FB860 /* First View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B36AF9FC1E01EA8300DE952F /* FirstViewController.swift */,
+				25DDCBFB1E1ACD62008FB860 /* FirstViewController.xib */,
+			);
+			name = "First View Controller";
+			sourceTree = "<group>";
+		};
+		25DDCC051E1AD57D008FB860 /* People List View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				25DDCBFF1E1ACDA3008FB860 /* PeopleListViewController.swift */,
+				25DDCC011E1AD4C9008FB860 /* PeopleList.storyboard */,
+				25DDCBFD1E1ACD93008FB860 /* PeopleListViewController.xib */,
+			);
+			name = "People List View Controller";
+			sourceTree = "<group>";
+		};
 		B36AF9EE1E01EA8300DE952F = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +149,9 @@
 		B36AF9F91E01EA8300DE952F /* mvvmc */ = {
 			isa = PBXGroup;
 			children = (
+				25DDCBF81E1AC5A4008FB860 /* Interface */,
 				250F08D01E1AAA080011E432 /* Data */,
 				B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */,
-				B36AF9FC1E01EA8300DE952F /* ViewController.swift */,
 				B36AF9FE1E01EA8400DE952F /* Main.storyboard */,
 				B36AFA011E01EA8400DE952F /* Assets.xcassets */,
 				B36AFA031E01EA8400DE952F /* LaunchScreen.storyboard */,
@@ -207,6 +246,7 @@
 				TargetAttributes = {
 					B36AF9F61E01EA8300DE952F = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = MVWL9X5BT9;
 						ProvisioningStyle = Automatic;
 					};
 					B36AFA0A1E01EA8400DE952F = {
@@ -247,8 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36AFA051E01EA8400DE952F /* LaunchScreen.storyboard in Resources */,
+				25DDCBFE1E1ACD93008FB860 /* PeopleListViewController.xib in Resources */,
 				B36AFA021E01EA8400DE952F /* Assets.xcassets in Resources */,
+				25DDCC021E1AD4C9008FB860 /* PeopleList.storyboard in Resources */,
 				B36AFA001E01EA8400DE952F /* Main.storyboard in Resources */,
+				25DDCBFC1E1ACD62008FB860 /* FirstViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +316,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B36AF9FD1E01EA8300DE952F /* ViewController.swift in Sources */,
+				B36AF9FD1E01EA8300DE952F /* FirstViewController.swift in Sources */,
+				25DDCC001E1ACDA3008FB860 /* PeopleListViewController.swift in Sources */,
 				250F08D21E1AABAA0011E432 /* DataManager.swift in Sources */,
+				25DDCBFA1E1AC65B008FB860 /* Coordinator.swift in Sources */,
 				250F08D41E1AABBE0011E432 /* Person.swift in Sources */,
 				B36AF9FB1E01EA8300DE952F /* AppDelegate.swift in Sources */,
 			);
@@ -428,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MVWL9X5BT9;
 				INFOPLIST_FILE = mvvmc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mkl.mvvmc;
@@ -440,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MVWL9X5BT9;
 				INFOPLIST_FILE = mvvmc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mkl.mvvmc;
