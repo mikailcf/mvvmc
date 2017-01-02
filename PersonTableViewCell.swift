@@ -34,6 +34,32 @@ class PersonTableViewCell: UITableViewCell {
         self.dateLabel.text = dateFormatter.string(from: person.birthDate)
     }
 
+    func setupAsEmpty() {
+
+        var nameFrame = fullNameLabel.frame
+        nameFrame.size.width = 100.0
+
+        var dateFrame = dateLabel.frame
+        dateFrame.size.width = 80.0
+
+        fullNameLabel.backgroundColor = UIColor.groupTableViewBackground
+        fullNameLabel.text = "                           "
+        fullNameLabel.frame = nameFrame
+
+        dateLabel.backgroundColor = UIColor.groupTableViewBackground
+        dateLabel.text = "            "
+        dateLabel.frame = dateFrame
+    }
+
+    private func resetInterface() {
+        fullNameLabel.backgroundColor = UIColor.clear
+        dateLabel.backgroundColor = UIColor.clear
+    }
+
+    override func prepareForReuse() {
+        resetInterface()
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

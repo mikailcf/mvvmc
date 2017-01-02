@@ -9,21 +9,31 @@
 import Foundation
 
 enum DataError {
+
     case Offline
     case ServerGenericError
     case Empty
 }
 
 class DataManager {
-    static func getLocalPersonsList() -> [Person] {
+
+    private static func mockPeopleList() -> [Person] {
         return (1..<10).map({ Person.init(mockParameter: $0) })
     }
 
-    static func getRemotePersonsList(callback: ((_ personsList: [Person]?, _ error: DataError?) -> Void), mockError: DataError? = nil) {
-        if let mockError = mockError {
-            callback(nil, mockError)
+    private static func getLocalPeopleList() -> [Person] {
+        return mockPeopleList()
+    }
+
+    static func getPeopleList(callback: ((_ personsList: [Person]?, _ error: DataError?) -> Void)) {
+        let error: DataError? = nil
+
+        // the server request should be made here, wrapping any server error in the error: DataError above
+
+        if let error = error {
+            callback(getLocalPeopleList(), error)
         } else {
-            callback(getLocalPersonsList(), nil)
+            callback(mockPeopleList(), nil)
         }
     }
 }

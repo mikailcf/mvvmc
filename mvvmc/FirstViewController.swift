@@ -10,11 +10,11 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
-    private var coordinator: MainCoordinator? = nil
+    private var delegate: FirstViewDelegate? = nil
 
-    init(coordinator: MainCoordinator) {
+    init(delegate: FirstViewDelegate) {
         super.init(nibName: nil, bundle: nil)
-        self.coordinator = coordinator
+        self.delegate = delegate
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,6 +24,6 @@ class FirstViewController: UIViewController {
     // MARK: Actions
 
     @IBAction func peopleListButtonClick() {
-        coordinator?.showPeopleList()
+        delegate?.showPeopleList()
     }
 }

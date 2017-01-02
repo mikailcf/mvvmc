@@ -13,17 +13,17 @@ class PeopleListViewController: UIViewController {
     private static let storyboardName = "PeopleList"
     private static let viewControllerName = "PeopleListViewController"
 
-    fileprivate var coordinator: MainCoordinator? = nil
-    fileprivate var peopleList: [Person]? = nil
+    fileprivate var delegate: PeopleListDelegate? = nil
+    fileprivate var datasource: PeopleListDataSource? = nil
 
-    @IBOutlet private var peopleTableView: UITableView!
+    @IBOutlet fileprivate var peopleTableView: UITableView!
 
     // usando Xib
 
-    init(coordinator: MainCoordinator, peopleList: [Person]) {
+    init(delegate: PeopleListDelegate, datasource: PeopleListDataSource) {
         super.init(nibName: nil, bundle: nil)
-        self.coordinator = coordinator
-        self.peopleList = peopleList
+        self.delegate = delegate
+        self.datasource = datasource
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -32,12 +32,12 @@ class PeopleListViewController: UIViewController {
 
     // usando storyboard
 
-    static func fromStoryboard(coordinator: MainCoordinator, peopleList: [Person]) -> PeopleListViewController? {
+    static func fromStoryboard(delegate: PeopleListDelegate, datasource: PeopleListDataSource) -> PeopleListViewController? {
         let storyboard: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
 
         guard let peopleListViewController = storyboard.instantiateViewController(withIdentifier: viewControllerName) as? PeopleListViewController else { return nil }
-        peopleListViewController.coordinator = coordinator
-        peopleListViewController.peopleList = peopleList
+        peopleListViewController.delegate = delegate
+        peopleListViewController.datasource = datasource
 
         return peopleListViewController
     }
@@ -49,26 +49,38 @@ class PeopleListViewController: UIViewController {
         peopleTableView.dataSource = self
         peopleTableView.estimatedRowHeight = PersonTableViewCell.minHeight()
 
+        delegate?.loadPeopleList(feedback: self)
+
         super.viewDidLoad()
     }
-
 }
 
 extension PeopleListViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return peopleList?.count ?? 0
+        return datasource?.peopleList?.count ?? 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.cellID, for: indexPath) as? PersonTableViewCell,
-            let peopleList = peopleList
+            let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.cellID, for: indexPath) as? PersonTableViewCell
         else {
             return UITableViewCell()
         }
 
-        cell.setup(person: peopleList[indexPath.row])
+        if let peopleList = datasource?.peopleList {
+            cell.setup(person: peopleList[indexPath.row])
+        } else {
+            cell.setupAsEmpty()
+        }
 
         return cell
+    }
+}
+
+extension PeopleListViewController: PeopleListFeedback {
+
+    func didLoadPeopleList(error: DataError?) {
+        peopleTableView.reloadData()
     }
 }

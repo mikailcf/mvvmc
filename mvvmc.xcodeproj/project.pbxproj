@@ -16,6 +16,8 @@
 		25DDCC021E1AD4C9008FB860 /* PeopleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DDCC011E1AD4C9008FB860 /* PeopleList.storyboard */; };
 		25DDCC0A1E1AE2EC008FB860 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DDCC081E1AE2EC008FB860 /* PersonTableViewCell.swift */; };
 		25DDCC0B1E1AE2EC008FB860 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25DDCC091E1AE2EC008FB860 /* PersonTableViewCell.xib */; };
+		25DDCC0D1E1AED42008FB860 /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DDCC0C1E1AED42008FB860 /* PeopleListViewModel.swift */; };
+		25DDCC0F1E1AEDD1008FB860 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DDCC0E1E1AEDD1008FB860 /* FirstViewModel.swift */; };
 		B36AF9FB1E01EA8300DE952F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */; };
 		B36AF9FD1E01EA8300DE952F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AF9FC1E01EA8300DE952F /* FirstViewController.swift */; };
 		B36AFA001E01EA8400DE952F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36AF9FE1E01EA8400DE952F /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		25DDCC011E1AD4C9008FB860 /* PeopleList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PeopleList.storyboard; sourceTree = "<group>"; };
 		25DDCC081E1AE2EC008FB860 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonTableViewCell.swift; path = ../PersonTableViewCell.swift; sourceTree = "<group>"; };
 		25DDCC091E1AE2EC008FB860 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PersonTableViewCell.xib; path = ../PersonTableViewCell.xib; sourceTree = "<group>"; };
+		25DDCC0C1E1AED42008FB860 /* PeopleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
+		25DDCC0E1E1AEDD1008FB860 /* FirstViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		B36AF9F71E01EA8300DE952F /* mvvmc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mvvmc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36AF9FA1E01EA8300DE952F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B36AF9FC1E01EA8300DE952F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +108,7 @@
 		25DDCBF81E1AC5A4008FB860 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				25DDCC051E1AD57D008FB860 /* People List View Controller */,
+				25DDCC051E1AD57D008FB860 /* People List View */,
 				25DDCBF91E1AC65B008FB860 /* Coordinator.swift */,
 				25DDCC031E1AD562008FB860 /* First View Controller */,
 			);
@@ -116,11 +120,12 @@
 			children = (
 				B36AF9FC1E01EA8300DE952F /* FirstViewController.swift */,
 				25DDCBFB1E1ACD62008FB860 /* FirstViewController.xib */,
+				25DDCC0E1E1AEDD1008FB860 /* FirstViewModel.swift */,
 			);
 			name = "First View Controller";
 			sourceTree = "<group>";
 		};
-		25DDCC051E1AD57D008FB860 /* People List View Controller */ = {
+		25DDCC051E1AD57D008FB860 /* People List View */ = {
 			isa = PBXGroup;
 			children = (
 				25DDCBFF1E1ACDA3008FB860 /* PeopleListViewController.swift */,
@@ -128,8 +133,9 @@
 				25DDCBFD1E1ACD93008FB860 /* PeopleListViewController.xib */,
 				25DDCC081E1AE2EC008FB860 /* PersonTableViewCell.swift */,
 				25DDCC091E1AE2EC008FB860 /* PersonTableViewCell.xib */,
+				25DDCC0C1E1AED42008FB860 /* PeopleListViewModel.swift */,
 			);
-			name = "People List View Controller";
+			name = "People List View";
 			sourceTree = "<group>";
 		};
 		B36AF9EE1E01EA8300DE952F = {
@@ -324,11 +330,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36AF9FD1E01EA8300DE952F /* FirstViewController.swift in Sources */,
+				25DDCC0D1E1AED42008FB860 /* PeopleListViewModel.swift in Sources */,
 				25DDCC001E1ACDA3008FB860 /* PeopleListViewController.swift in Sources */,
 				250F08D21E1AABAA0011E432 /* DataManager.swift in Sources */,
 				25DDCBFA1E1AC65B008FB860 /* Coordinator.swift in Sources */,
 				250F08D41E1AABBE0011E432 /* Person.swift in Sources */,
 				25DDCC0A1E1AE2EC008FB860 /* PersonTableViewCell.swift in Sources */,
+				25DDCC0F1E1AEDD1008FB860 /* FirstViewModel.swift in Sources */,
 				B36AF9FB1E01EA8300DE952F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

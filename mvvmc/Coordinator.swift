@@ -9,6 +9,7 @@
 import UIKit
 
 protocol MainCoordinator {
+    
     func showPeopleList()
 }
 
@@ -25,16 +26,18 @@ class Coordinator {
     func appInit() {
         guard let navigationController = navigationController else { return }
 
-        navigationController.viewControllers = [FirstViewController(coordinator: self)]
+        navigationController.viewControllers = [FirstViewController(delegate: FirstViewModel(coordinator: self))]
     }
 }
 
 extension Coordinator: MainCoordinator {
 
     func showPeopleList() {
+        let peopleListViewModel = PeopleListViewModel(coordinator: self)
+
         guard
             let navigationController = navigationController,
-            let peopleListviewController = PeopleListViewController.fromStoryboard(coordinator: self, peopleList: DataManager.getLocalPersonsList())
+            let peopleListviewController = PeopleListViewController.fromStoryboard(delegate: peopleListViewModel, datasource: peopleListViewModel)
         else { return }
 
         navigationController.pushViewController(peopleListviewController, animated: true)
