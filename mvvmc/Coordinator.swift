@@ -13,6 +13,7 @@ protocol MainCoordinator {
     func showPeopleList()
     func showFirstDetails(index: Int)
     func showNextDetails(delegate: PersonDelegate, datasource: PersonDataSource)
+    func backToList()
 }
 
 class Coordinator: MainCoordinator {
@@ -62,5 +63,15 @@ class Coordinator: MainCoordinator {
         else { return }
 
         navigationController.pushViewController(viewController, animated: true)
+    }
+
+    func backToList() {
+        guard let navigationController = navigationController else { return }
+
+        if let targetViewController = navigationController.viewControllers.filter({ $0.isKind(of: PeopleListViewController.self) }).first {
+            navigationController.popToViewController(targetViewController, animated: true)
+        } else {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
 }

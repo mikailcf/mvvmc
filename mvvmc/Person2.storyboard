@@ -34,13 +34,22 @@
                                     <action selector="changeNickname" destination="yWc-4h-RxB" eventType="touchUpInside" id="xVb-My-0Cm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnw-Su-7l2">
+                                <rect key="frame" x="149.5" y="430" width="76" height="30"/>
+                                <state key="normal" title="Back to list"/>
+                                <connections>
+                                    <action selector="backToList" destination="yWc-4h-RxB" eventType="touchUpInside" id="tac-Sa-LcJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fnw-Su-7l2" firstAttribute="centerX" secondItem="KRR-vn-dav" secondAttribute="centerX" id="5B5-JB-ggy"/>
                             <constraint firstItem="Cdg-vR-hoa" firstAttribute="centerX" secondItem="KRR-vn-dav" secondAttribute="centerX" id="5Hl-c0-W20"/>
                             <constraint firstItem="vSD-Tq-AaM" firstAttribute="centerX" secondItem="KRR-vn-dav" secondAttribute="centerX" id="RJe-OA-AWl"/>
                             <constraint firstItem="Gqv-KF-clE" firstAttribute="top" secondItem="vSD-Tq-AaM" secondAttribute="bottom" constant="99" id="cg7-Jx-hNK"/>
                             <constraint firstItem="Cdg-vR-hoa" firstAttribute="top" secondItem="Slr-ZP-Vg8" secondAttribute="bottom" constant="141" id="oD7-ti-1kK"/>
+                            <constraint firstItem="vSD-Tq-AaM" firstAttribute="top" secondItem="fnw-Su-7l2" secondAttribute="bottom" constant="14" id="rXW-dW-Fvt"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

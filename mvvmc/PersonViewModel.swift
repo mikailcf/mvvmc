@@ -14,6 +14,7 @@ protocol PersonDelegate {
     func changeFirstName(feedback: Person1Feedback)
     func changeNickname(feedback: Person2Feedback)
     func showNextDetails()
+    func backToList()
 }
 
 protocol PersonDataSource {
@@ -64,6 +65,10 @@ class PersonViewModel: PersonDelegate, PersonDataSource {
 
     func showNextDetails() {
         coordinator.showNextDetails(delegate: self, datasource: self)
+    }
+
+    func backToList() {
+        coordinator.backToList()
     }
 
     // MARK: PersonDatasource

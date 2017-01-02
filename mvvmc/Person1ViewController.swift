@@ -43,7 +43,7 @@ class Person1ViewController: UIViewController, Person1Feedback {
         delegate?.showNextDetails()
     }
 
-    @IBAction func changeFirstName() {
+    @IBAction private func changeFirstName() {
         delegate?.changeFirstName(feedback: self)
     }
 

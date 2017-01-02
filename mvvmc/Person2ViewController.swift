@@ -34,8 +34,12 @@ class Person2ViewController: UIViewController, Person2Feedback {
         super.viewDidLoad()
     }
 
-    @IBAction func changeNickname() {
+    @IBAction private func changeNickname() {
         delegate?.changeNickname(feedback: self)
+    }
+
+    @IBAction private func backToList() {
+        delegate?.backToList()
     }
 
     // MARK: Person2Feedback
